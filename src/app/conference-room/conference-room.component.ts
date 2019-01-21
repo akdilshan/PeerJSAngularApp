@@ -22,12 +22,13 @@ export class ConferenceRoomComponent implements OnInit {
     let localvideo = this.localVideo.nativeElement;
    // this.peer = new Peer({host: 'localhost', port: 9000, path: '/myapp'});
    // this.peer = new Peer({　host:'peerjs-server.herokuapp.com', secure:true, port:443, key: 'peerjs', debug: 3});
-    this.peer = new Peer({　host:'peerservertesting.herokuapp.com', secure:true, port:9000, key: 'peerjs', debug: 3})
+   // this.peer = new Peer({　host:'peerservertesting.herokuapp.com', secure:true, port:9000, key: 'peerjs', debug: 3});
+    this.peer= new Peer();
    
     setTimeout(() => {
      console.log(this.peer.id);
       this.mypeerid = this.peer.id;
-    },25000);
+    },10000);
     
     this.peer.on('connection', function(conn) {
   conn.on('data', function(data){
