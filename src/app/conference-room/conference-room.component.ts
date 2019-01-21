@@ -26,9 +26,9 @@ export class ConferenceRoomComponent implements OnInit {
     
     
     setTimeout(() => {
-      debugger;
+     console.log(this.peer.id);
       this.mypeerid = this.peer.id;
-    },8000);
+    },25000);
     
     this.peer.on('connection', function(conn) {
   conn.on('data', function(data){
