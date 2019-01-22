@@ -7,11 +7,11 @@
                             <div mat-card-avatar class="example-header-image"></div>
                             <mat-card-title> Control Center</mat-card-title>
                             <mat-card-subtitle>My id :  <mat-chip color="primary" selected>{{mypeerid}}</mat-chip>   </mat-card-subtitle>
-                            <video controls [style.width.px]="lwidth" [style.height.px]="lheight"  #localvideo autoplay></video>
+                            <video [style.width.px]="lwidth" [style.height.px]="lheight"  #localvideo autoplay></video>
                           </mat-card-header>   
                           <mat-card-content >
                              
-                              <video [style.width.px]="rwidth" [style.height.px]="rheight" #remotevideo autoplay></video>
+                              <video controls [style.width.px]="rwidth" [style.height.px]="rheight" #remotevideo autoplay></video>
                           </mat-card-content>
                           <mat-card-actions>
                               <mat-form-field class="example-full-width">
