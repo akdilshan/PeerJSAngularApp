@@ -8,12 +8,12 @@ import { ConferenceRoomComponent } from './conference-room/conference-room.compo
 import { FormsModule } from '@angular/forms';
 
 import {MatListModule, MatCardModule, MatDividerModule, MatGridListModule, MatButtonModule, MatDialogModule, MatInputModule, MatChipsModule} from '@angular/material';
-import { MobileviewComponent } from './mobileview/mobileview.component';
+
 
 @NgModule({
   declarations: [
     AppComponent, 
-    ConferenceRoomComponent, MobileviewComponent
+    ConferenceRoomComponent
   ],
   imports: [
     BrowserModule,
