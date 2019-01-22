@@ -14,6 +14,11 @@ export class ConferenceRoomComponent implements OnInit {
   peer:any;
   anotherid:any;
   mypeerid:any;
+  lwidth: number = 100;
+  lheight: number = 100;
+
+  rwidth: number = 400;
+  rheight: number = 400;
 
   constructor() { }
 
