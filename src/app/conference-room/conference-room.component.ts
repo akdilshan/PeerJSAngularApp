@@ -21,14 +21,16 @@ export class ConferenceRoomComponent implements OnInit {
     let video = this.remoteVideo.nativeElement;
     let localvideo = this.localVideo.nativeElement;
    // this.peer = new Peer({host: 'localhost', port: 9000, path: '/myapp'});
-   // this.peer = new Peer({　host:'peerjs-server.herokuapp.com', secure:true, port:443, key: 'peerjs', debug: 3});
-   // this.peer = new Peer({　host:'peerservertesting.herokuapp.com', secure:true, port:9000, key: 'peerjs', debug: 3});
-    this.peer= new Peer();
-   
+   this.peer = new Peer({　host:'peerjs-server.herokuapp.com', secure:true, port:443, key: 'peerjs', debug: 3});
+   // this.peer = new Peer({　host:'peerservertesting.herokuapp.com', secure:true, port:443, key: 'peerjs', debug: 3})
+    https://medium.com/@hellotunmbi/how-to-deploy-angular-application-to-heroku-1d56e09c5147
+    //this.peer = new Peer({host: 'peerservertesting.herokuapp.com', port: 9000});
+   // this.peer = new Peer({host: 'peerserver-8e1f7.firebaseapp.com', port: 9000, path: '/myapp'});
+    
     setTimeout(() => {
-     console.log(this.peer.id);
+      debugger;
       this.mypeerid = this.peer.id;
-    },10000);
+    },3000);
     
     this.peer.on('connection', function(conn) {
   conn.on('data', function(data){
@@ -39,7 +41,8 @@ export class ConferenceRoomComponent implements OnInit {
  var n = <any>navigator;    
     n.getUserMedia =  ( n.getUserMedia || n.webkitGetUserMedia || n.mozGetUserMedia || n.msGetUserMedia );    
     n.getUserMedia({video: true, audio: false}, function(stream) {      
-      localvideo.src = URL.createObjectURL(stream);
+      //localvideo.src = URL.createObjectURL(stream);
+      localvideo.srcObject=stream;
       localvideo.play();
     }, function(err) {
       console.log('Failed to get stream', err);
@@ -85,7 +88,8 @@ conn.on('open', function(){
     n.getUserMedia({video: true, audio: true}, function(stream) {
       var call = localvar.call(fname, stream);
       call.on('stream', function(remotestream) {
-        video.src = URL.createObjectURL(remotestream);
+        //video.src = URL.createObjectURL(remotestream);
+        video.srcObject=remotestream;
         video.play();
       })
     }, function(err){
